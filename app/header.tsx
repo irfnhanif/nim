@@ -7,8 +7,9 @@ export function Header() {
   return (
     <header className="mb-6 flex items-center justify-between">
       <div className="flex items-center gap-4">
+        {/* need to add image animation */}
         <Image
-          src="/profile.jpg"
+          src="/cover.jpg"
           alt="Irfan Hanif Habibi"
           width={60}
           height={60}

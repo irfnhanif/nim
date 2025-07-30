@@ -137,11 +137,11 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
-            "The best software is built on a strong, thoughtful foundation. This
+            The best software is built on a strong and thoughtful foundation that
             requires a methodical approach focused on creating secure, scalable
             systems designed for long-term success. The ultimate goal is to
             deliver a solution that is both elegantly engineered and undeniably
-            valuable to the user."
+            valuable to the user.
           </p>
         </div>
       </motion.section>
