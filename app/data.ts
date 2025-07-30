@@ -49,27 +49,27 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Reglazed Studio',
-    title: 'CEO',
-    start: '2024',
+    company: 'Freelance',
+    title: 'Software Engineer',
+    start: 'Feb. 2025',
     end: 'Present',
-    link: 'https://ibelick.com',
+    link: 'https://www.linkedin.com/in/irfan-hanif-habibi/',
     id: 'work1',
   },
   {
-    company: 'Freelance',
-    title: 'Design Engineer',
-    start: '2022',
-    end: '2024',
-    link: 'https://ibelick.com',
+    company: 'Telkom Indonesia',
+    title: 'Back-end Developer Intern',
+    start: 'Feb. 2024',
+    end: 'July 2024',
+    link: 'https://www.linkedin.com/in/irfan-hanif-habibi/',
     id: 'work2',
   },
   {
-    company: 'Freelance',
-    title: 'Front-end Developer',
-    start: '2017',
-    end: 'Present',
-    link: 'https://ibelick.com',
+    company: 'POROS Organization of Open Source',
+    title: 'Backend Division Staff',
+    start: 'Mar. 2023',
+    end: 'Dec. 2024',
+    link: 'https://www.linkedin.com/in/irfan-hanif-habibi/',
     id: 'work3',
   },
 ]
@@ -106,20 +106,16 @@ export const BLOG_POSTS: BlogPost[] = [
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Github',
-    link: 'https://github.com/ibelick',
-  },
-  {
-    label: 'Twitter',
-    link: 'https://twitter.com/ibelick',
+    link: 'https://github.com/irfnhanif',
   },
   {
     label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/ibelick',
+    link: 'https://www.linkedin.com/in/irfan-hanif-habibi/',
   },
   {
     label: 'Instagram',
-    link: 'https://www.instagram.com/ibelick',
+    link: 'https://www.instagram.com/irfnhan',
   },
 ]
 
-export const EMAIL = 'your@email.com'
+export const EMAIL = '14.irfanh@gmail.com'
