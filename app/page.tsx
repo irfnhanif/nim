@@ -3,6 +3,7 @@ import { motion } from 'motion/react'
 import { XIcon } from 'lucide-react'
 import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
+import Image from 'next/image'
 import {
   MorphingDialog,
   MorphingDialogTrigger,
@@ -39,11 +40,13 @@ const TRANSITION_SECTION = {
   duration: 0.3,
 }
 
-type ProjectVideoProps = {
+type ProjectVideoOrImageProps = {
   src: string
 }
 
-function ProjectVideo({ src }: ProjectVideoProps) {
+function ProjectVideoOrImage({ src }: ProjectVideoOrImageProps) {
+  const isImage = /\.(jpe?g|png|gif|webp|avif)$/i.test(src)
+
   return (
     <MorphingDialog
       transition={{
@@ -53,23 +56,42 @@ function ProjectVideo({ src }: ProjectVideoProps) {
       }}
     >
       <MorphingDialogTrigger>
-        <video
-          src={src}
-          autoPlay
-          loop
-          muted
-          className="aspect-video w-full cursor-zoom-in rounded-xl"
-        />
-      </MorphingDialogTrigger>
-      <MorphingDialogContainer>
-        <MorphingDialogContent className="relative aspect-video rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
+        {isImage ? (
+          <Image
+            src={src}
+            alt="Ideabox MiX"
+            width={400}
+            height={225}
+            className="aspect-video cursor-zoom-in rounded-xl object-cover"
+          />
+        ) : (
           <video
             src={src}
             autoPlay
             loop
             muted
-            className="aspect-video h-[50vh] w-full rounded-xl md:h-[70vh]"
+            className="aspect-video w-full cursor-zoom-in rounded-xl"
           />
+        )}
+      </MorphingDialogTrigger>
+      <MorphingDialogContainer>
+        <MorphingDialogContent className="relative flex items-center justify-center rounded-2xl bg-zinc-50 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950 dark:ring-zinc-800/50">
+          {isImage ? (
+            <img
+              src={src}
+              alt="Project Image"
+              className="max-h-[70vh] max-w-full object-contain"
+              loading="lazy"
+            />
+          ) : (
+            <video
+              src={src}
+              autoPlay
+              loop
+              muted
+              className="max-h-[70vh] max-w-full rounded-xl object-contain"
+            />
+          )}
         </MorphingDialogContent>
         <MorphingDialogClose
           className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
@@ -137,11 +159,11 @@ export default function Personal() {
       >
         <div className="flex-1">
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
-            The best software is built on a strong and thoughtful foundation that
-            requires a methodical approach focused on creating secure, scalable
-            systems designed for long-term success. The ultimate goal is to
-            deliver a solution that is both elegantly engineered and undeniably
-            valuable to the user.
+            The best software is built on a strong and thoughtful foundation
+            that requires a methodical approach focused on creating secure,
+            scalable systems designed for long-term success. The ultimate goal
+            is to deliver a solution that is both elegantly engineered and
+            undeniably valuable to the user.
           </p>
         </div>
       </motion.section>
@@ -155,7 +177,7 @@ export default function Personal() {
           {PROJECTS.map((project) => (
             <div key={project.name} className="space-y-2">
               <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={project.video} />
+                <ProjectVideoOrImage src={project.media} />
               </div>
               <div className="px-1">
                 <a
