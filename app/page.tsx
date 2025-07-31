@@ -160,7 +160,7 @@ export default function Personal() {
         <div className="flex-1">
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
             The best software is built on a strong and thoughtful foundation
-            that requires a methodical approach focused on creating secure,
+            that requires a methodical approach focused on creating secure and
             scalable systems designed for long-term success. The ultimate goal
             is to deliver a solution that is both elegantly engineered and
             undeniably valuable to the user.
@@ -188,7 +188,7 @@ export default function Personal() {
                   {project.name}
                   <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full dark:bg-zinc-50"></span>
                 </a>
-                <p className="text-base text-zinc-600 dark:text-zinc-400">
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">
                   {project.description}
                 </p>
               </div>

@@ -2,7 +2,7 @@ type Project = {
   name: string
   description: string
   link: string
-  video: string
+  media: string
   id: string
 }
 
@@ -29,20 +29,19 @@ type SocialLink = {
 
 export const PROJECTS: Project[] = [
   {
-    name: 'Motion Primitives Pro',
+    name: 'Ideabox MiX',
     description:
-      'Advanced components and templates to craft beautiful websites.',
-    link: 'https://pro.motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/newProfileItem/d898be8a-7037-4c71-af0c-8997239b050d.mp4?_a=DATAdtAAZAA0',
+      'A social media platform where MiX (Mandiri Innovation Experience) participants can share and collaborate on innovative ideas.',
+    link: 'https://mandiri.ideaboxapp.com/',
+    media: '/ideabox_mix.png',
     id: 'project1',
   },
   {
-    name: 'Motion Primitives',
-    description: 'UI kit to make beautiful, animated interfaces.',
-    link: 'https://motion-primitives.com/',
-    video:
-      'https://res.cloudinary.com/read-cv/video/upload/t_v_b/v1/1/profileItems/W2azTw5BVbMXfj7F53G92hMVIn32/XSfIvT7BUWbPRXhrbLed/ee6871c9-8400-49d2-8be9-e32675eabf7e.mp4?_a=DATAdtAAZAA0',
+    name: 'AMD MiX',
+    description:
+      'A canvassing platform where digital talents in the Mandiri Innovation Xperience program can collaborate on innovations.',
+    link: 'https://dingo-mandiri.ideaboxapp.com/homepage',
+    media: '/amd_mandiri.png',
     id: 'project2',
   },
 ]
