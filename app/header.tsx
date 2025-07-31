@@ -4,30 +4,77 @@ import { TextEffect } from '@/components/ui/text-effect'
 import Link from 'next/link'
 import Image from 'next/image'
 import { X } from 'lucide-react'
+import { motion } from 'motion/react'
+import {
+  MorphingDialog,
+  MorphingDialogTrigger,
+  MorphingDialogContent,
+  MorphingDialogClose,
+  MorphingDialogContainer,
+} from '@/components/ui/morphing-dialog'
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-
   return (
     <>
       <header className="mb-6 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <div className="cursor-pointer" onClick={() => setIsOpen(true)}>
-            <Image
-              src="/profile.jpeg"
-              alt="Profile picture"
-              width={60}
-              height={60}
-              className="rounded-full"
-            />
-          </div>
+          <MorphingDialog
+            transition={{
+              type: 'spring',
+              bounce: 0,
+              duration: 0.3,
+            }}
+          >
+            <MorphingDialogTrigger>
+              <div className="cursor-pointer">
+                <Image
+                  src="/profile.jpeg"
+                  alt="Profile picture"
+                  width={60}
+                  height={60}
+                  className="rounded-full"
+                />
+              </div>
+            </MorphingDialogTrigger>
+            <MorphingDialogContainer>
+              <MorphingDialogContent className="relative flex items-center justify-center">
+                <Image
+                  src="/profile.jpeg"
+                  alt="Profile picture"
+                  width={400}
+                  height={400}
+                  className="max-h-[70vh] max-w-full rounded-full object-contain shadow-lg"
+                />
+              </MorphingDialogContent>
+              <MorphingDialogClose
+                className="fixed top-6 right-6 h-fit w-fit rounded-full bg-white p-1"
+                variants={{
+                  initial: { opacity: 0 },
+                  animate: {
+                    opacity: 1,
+                    transition: { delay: 0.3, duration: 0.1 },
+                  },
+                  exit: { opacity: 0, transition: { duration: 0 } },
+                }}
+              >
+                <X className="h-5 w-5 text-zinc-500" />
+              </MorphingDialogClose>
+            </MorphingDialogContainer>
+          </MorphingDialog>
+
           <div>
-            <Link
-              href="/"
-              className="text-2xl font-medium text-black dark:text-white"
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
             >
-              Irfan Hanif Habibi
-            </Link>
+              <Link
+                href="/"
+                className="text-2xl font-medium text-black transition-colors duration-200 hover:text-zinc-700 dark:text-white dark:hover:text-zinc-300"
+              >
+                Irfan Hanif Habibi
+              </Link>
+            </motion.div>
             <TextEffect
               as="p"
               preset="fade"
@@ -40,32 +87,6 @@ export function Header() {
           </div>
         </div>
       </header>
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
-          onClick={() => setIsOpen(false)}
-        >
-          <button
-            onClick={() => setIsOpen(false)}
-            className="fixed top-4 right-4 z-60 rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
-          >
-            <X size={24} />
-          </button>
-
-          <div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <Image
-              src="/profile.jpeg"
-              alt="Profile picture"
-              width={400}
-              height={400}
-              className="rounded-full shadow-lg"
-            />
-          </div>
-        </div>
-      )}
     </>
   )
 }
