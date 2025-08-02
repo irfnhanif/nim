@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
     description:
       'A social media platform where MiX (Mandiri Innovation Experience) participants can share and collaborate on innovative ideas.',
     link: 'https://mandiri.ideaboxapp.com/',
-    media: '/ideabox_mix.png',
+    media: '/projects/ideabox_mix.png',
     id: 'project1',
   },
   {
@@ -41,7 +41,15 @@ export const PROJECTS: Project[] = [
     description:
       'A canvassing platform where digital talents in the Mandiri Innovation Xperience program can collaborate on innovations.',
     link: 'https://dingo-mandiri.ideaboxapp.com/homepage',
-    media: '/amd_mandiri.png',
+    media: '/projects/amd_mandiri.png',
+    id: 'project2',
+  },
+  {
+    name: 'Rifa-SIMS',
+    description:
+      'A mobile-first inventory management system designed for MSMEs, featuring barcode scanning and real-time alerts.',
+    link: 'https://github.com/irfnhanif/rifa-sims-client',
+    media: '/projects/rifa_sims_480p.mp4',
     id: 'project2',
   },
 ]
@@ -75,18 +83,24 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    title: 'Exploring the Intersection of Design, AI, and Design Engineering',
-    description: 'How AI is changing the way we design',
-    link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+    title: 'Coming soon',
+    description: 'Find valuable insights and stories in our upcoming articles.',
+    link: '',
     uid: 'blog-1',
   },
-  {
-    title: 'How to Export Metadata from MDX for Next.js SEO',
-    description:
-      'A guide on exporting metadata from MDX files to leverage Next.js SEO features.',
-    link: '/blog/example-mdx-metadata',
-    uid: 'blog-4',
-  },
+  // {
+  //   title: 'Exploring the Intersection of Design, AI, and Design Engineering',
+  //   description: 'How AI is changing the way we design',
+  //   link: '/blog/exploring-the-intersection-of-design-ai-and-design-engineering',
+  //   uid: 'blog-1',
+  // },
+  // {
+  //   title: 'How to Export Metadata from MDX for Next.js SEO',
+  //   description:
+  //     'A guide on exporting metadata from MDX files to leverage Next.js SEO features.',
+  //   link: '/blog/example-mdx-metadata',
+  //   uid: 'blog-4',
+  // },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
