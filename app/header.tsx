@@ -27,13 +27,19 @@ export function Header() {
           >
             <MorphingDialogTrigger>
               <div className="cursor-pointer">
-                <Image
-                  src="/profile.jpeg"
-                  alt="Profile picture"
-                  width={60}
-                  height={60}
-                  className="rounded-full"
-                />
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                >
+                  <Image
+                    src="/profile.jpeg"
+                    alt="Profile picture"
+                    width={60}
+                    height={60}
+                    className="rounded-full"
+                  />
+                </motion.div>
               </div>
             </MorphingDialogTrigger>
             <MorphingDialogContainer>
