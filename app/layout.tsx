@@ -14,14 +14,15 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://nim-fawn.vercel.app/'),
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   title: {
-    default: 'Nim - Personal website template',
-    template: '%s | Nim'
+    default: 'Irfan Hanif Habibi | Software Engineer',
+    template: '%s | Nim',
   },
-  description:  'Nim is a free and open-source personal website template built with Next.js 15, React 19 and Motion-Primitives.',
-};
+  description:
+    'Irfan Hanif Habibi, a Software Engineer specializing in backend development with Java, PHP, and Javascript. Experienced in building full-stack applications and REST APIs.',
+}
 
 const geist = Geist({
   variable: '--font-geist',
